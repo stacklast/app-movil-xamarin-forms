@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laboratorio_Bimestre_1.Views.MainPage">
+    <StackLayout Padding="10">
+        <Image Source="logo.png" HorizontalOptions="Center" Margin="20" />
+        <Entry x:Name="taskName" Placeholder="Task Name" />
+        <Entry x:Name="taskDescription" Placeholder="Task Description" />
+        <DatePicker x:Name="taskDate" />
+        <Label Text="Select Task Type" />
+        <Picker x:Name="taskTypePicker">
+            <Picker.Items>
+                <x:String>Reunión</x:String>
+                <x:String>Tarea</x:String>
+                <x:String>Tiempo Libre</x:String>
+            </Picker.Items>
+        </Picker>
+        <Label Text="Select Task Priority" />
+        <Stepper x:Name="taskPriorityStepper" Minimum="1" Maximum="10" Increment="1" Value="1" />
+        <Label x:Name="taskPriorityLabel" Text="Priority: 1" HorizontalOptions="Center" />
+        <Button Text="Add Task" Clicked="OnAddTask" Margin="5" />
+        <Button Text="Navigate to StackLayout" Clicked="OnNavigateToStackLayout" Margin="5" />
+        <Button Text="Navigate to Grid" Clicked="OnNavigateToGrid" Margin="5" />
+        <Button Text="Navigate to AbsoluteLayout" Clicked="OnNavigateToAbsolute" Margin="5" />
+        <Button Text="Navigate to ListView" Clicked="OnNavigateToListView" Margin="5" />
+    </StackLayout>
+</ContentPage>

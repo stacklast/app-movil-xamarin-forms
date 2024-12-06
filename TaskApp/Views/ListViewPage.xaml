@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laboratorio_Bimestre_1.Views.ListViewPage">
+    <StackLayout Padding="10">
+        <ListView x:Name="listView" VerticalOptions="FillAndExpand" VerticalScrollBarVisibility="Default" Visual="Material">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="5">
+                            <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Medium" />
+                            <Label Text="{Binding Description}" FontSize="Small" />
+                            <Label Text="{Binding Date, StringFormat='{0:MM/dd/yyyy}'}" FontSize="Small" />
+                            <Label Text="{Binding Type}" FontSize="Small" />
+                            <Label Text="{Binding Priority, StringFormat='Priority: {0}'}" FontSize="Small" />
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <Button Text="View" Clicked="OnViewTask" CommandParameter="{Binding .}" Margin="5" />
+                                <Button Text="Delete" Clicked="OnDeleteTask" CommandParameter="{Binding .}" Margin="5" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Back to Main" Clicked="OnBackToMainPage" HorizontalOptions="Center" VerticalOptions="EndAndExpand" />
+    </StackLayout>
+</ContentPage>

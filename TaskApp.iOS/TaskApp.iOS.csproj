@@ -9,9 +9,9 @@
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Laboratorio_Bimestre_1.iOS</RootNamespace>
+    <RootNamespace>TaskApp.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>Laboratorio Bimestre 1.iOS</AssemblyName>
+    <AssemblyName>TaskApp.iOS</AssemblyName>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <ProvisioningType>automatic</ProvisioningType>
@@ -128,9 +128,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\Laboratorio Bimestre 1\Laboratorio Bimestre 1.csproj">
-      <Project>{54000296-05EF-4A7F-AC3F-8F93E9F77C83}</Project>
-      <Name>Laboratorio Bimestre 1</Name>
+    <ProjectReference Include="..\TaskApp\TaskApp.csproj">
+      <Project>{A83B6750-FC48-4E69-A103-E1A4DFC77BA1}</Project>
+      <Name>TaskApp</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

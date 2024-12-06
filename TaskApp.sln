@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35521.163 d17.12
+VisualStudioVersion = 17.12.35521.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laboratorio Bimestre 1.Android", "Laboratorio Bimestre 1.Android\Laboratorio Bimestre 1.Android.csproj", "{A0E32D3C-10E1-49B8-B12C-69EB1CD6BFC3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskApp.Android", "TaskApp.Android\TaskApp.Android.csproj", "{A0E32D3C-10E1-49B8-B12C-69EB1CD6BFC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laboratorio Bimestre 1.iOS", "Laboratorio Bimestre 1.iOS\Laboratorio Bimestre 1.iOS.csproj", "{A67372FE-0CFD-4D10-A381-FC8B92FF2970}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskApp.iOS", "TaskApp.iOS\TaskApp.iOS.csproj", "{A67372FE-0CFD-4D10-A381-FC8B92FF2970}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laboratorio Bimestre 1", "Laboratorio Bimestre 1\Laboratorio Bimestre 1.csproj", "{A83B6750-FC48-4E69-A103-E1A4DFC77BA1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskApp", "TaskApp\TaskApp.csproj", "{A83B6750-FC48-4E69-A103-E1A4DFC77BA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

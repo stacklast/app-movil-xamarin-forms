@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laboratorio_Bimestre_1.App">
+    <Application.Resources>
+        <!-- Colors -->
+        <Color x:Key="PrimaryColor">#B91D21</Color>
+        <Color x:Key="AccentColor">#FFFFFF</Color>
+        <Color x:Key="TextColor">#000000</Color>
+        <!-- Styles -->
+        <Style TargetType="ContentPage">
+            <Setter Property="BackgroundColor" Value="{StaticResource AccentColor}" />
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+            <Setter Property="FontSize" Value="Medium" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+            <Setter Property="TextColor" Value="{StaticResource AccentColor}" />
+            <Setter Property="CornerRadius" Value="10" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+            <Setter Property="PlaceholderColor" Value="Gray" />
+            <Setter Property="BackgroundColor" Value="{StaticResource AccentColor}" />
+        </Style>
+        <Style TargetType="ListView">
+            <Setter Property="BackgroundColor" Value="{StaticResource AccentColor}" />
+            <Setter Property="SeparatorColor" Value="{StaticResource PrimaryColor}" />
+        </Style>
+    </Application.Resources>
+</Application>

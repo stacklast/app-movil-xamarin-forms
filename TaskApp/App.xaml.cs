@@ -8,7 +8,7 @@ namespace Laboratorio_Bimestre_1
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new Views.MainPage());
         }
 
         protected override void OnStart()
