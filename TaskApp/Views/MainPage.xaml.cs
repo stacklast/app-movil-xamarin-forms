@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using TaskApp.Models;
+using TaskApp.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -61,22 +63,29 @@ namespace Laboratorio_Bimestre_1.Views
             taskTypePicker.SelectedIndex = -1;
             taskPriorityStepper.Value = 1;
         }
-        private async void OnViewTask(object sender, EventArgs e)
-        {
-            var task = (TaskItem)((Button)sender).CommandParameter;
-            await Navigation.PushAsync(new StackLayoutPage(task, Tasks));
-        }
         private async void OnNavigateToGrid(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new GridPage(Tasks));
+            var currentPage = Navigation.NavigationStack.LastOrDefault();
+            if (currentPage != null)
+            {
+                await NavigationService.NavigateWithAnimation(currentPage, new GridPage(Tasks));
+            }
         }
         private async void OnNavigateToAbsolute(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AbsolutePage());
+            var currentPage = Navigation.NavigationStack.LastOrDefault();
+            if (currentPage != null)
+            {
+                await NavigationService.NavigateWithAnimation(currentPage, new AbsolutePage());
+            }
         }
         private async void OnNavigateToListView(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ListViewPage(Tasks));
+            var currentPage = Navigation.NavigationStack.LastOrDefault();
+            if (currentPage != null)
+            {
+                await NavigationService.NavigateWithAnimation(currentPage, new ListViewPage(Tasks));
+            }
         }
     }
 }
