@@ -2,25 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Laboratorio_Bimestre_1.Views.GridPage">
-    <StackLayout Padding="10">
-        <DatePicker x:Name="filterDate" Date="{Binding FilterDate, Mode=TwoWay}" />
-        <Button Text="Filter" Clicked="OnFilter" />
-        <Grid VerticalOptions="FillAndExpand" Visual="Material">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <ListView x:Name="taskListView">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Text="{Binding Name}" Detail="{Binding Description}" />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </Grid>
-    </StackLayout>
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <DatePicker x:Name="filterDatePicker" DateSelected="OnFilterDateSelected" />
+            <Button Text="Filtro" Clicked="OnFilter" />
+            <Grid VerticalOptions="FillAndExpand" Visual="Material" BackgroundColor="#FFFFFF">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <ListView x:Name="taskListView">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}" Detail="{Binding Description}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

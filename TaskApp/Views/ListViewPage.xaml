@@ -2,26 +2,30 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Laboratorio_Bimestre_1.Views.ListViewPage">
-    <StackLayout Padding="10">
-        <ListView x:Name="listView" VerticalOptions="FillAndExpand" VerticalScrollBarVisibility="Default" Visual="Material">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Padding="5">
-                            <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Medium" />
-                            <Label Text="{Binding Description}" FontSize="Small" />
-                            <Label Text="{Binding Date, StringFormat='{0:MM/dd/yyyy}'}" FontSize="Small" />
-                            <Label Text="{Binding Type}" FontSize="Small" />
-                            <Label Text="{Binding Priority, StringFormat='Priority: {0}'}" FontSize="Small" />
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                                <Button Text="View" Clicked="OnViewTask" CommandParameter="{Binding .}" Margin="5" />
-                                <Button Text="Delete" Clicked="OnDeleteTask" CommandParameter="{Binding .}" Margin="5" />
-                            </StackLayout>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Button Text="Back to Main" Clicked="OnBackToMainPage" HorizontalOptions="Center" VerticalOptions="EndAndExpand" />
-    </StackLayout>
+    <ContentPage.Content>
+        <StackLayout Padding="10" VerticalOptions="FillAndExpand">
+            <ListView x:Name="listView" VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="0" Orientation="Vertical">
+                                    <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Medium" />
+                                </StackLayout>
+                                <StackLayout Grid.Column="1" Orientation="Horizontal" HorizontalOptions="End">
+                                    <Button Text="Ver" Clicked="OnViewTask" CommandParameter="{Binding .}" Margin="5,0" />
+                                    <Button Text="Eliminar" Clicked="OnDeleteTask" CommandParameter="{Binding .}" Margin="5,0" />
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Regresar" Clicked="OnBackToMainPage" HorizontalOptions="Center" VerticalOptions="EndAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

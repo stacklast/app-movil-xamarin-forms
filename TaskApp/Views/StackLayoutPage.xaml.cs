@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using TaskApp.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

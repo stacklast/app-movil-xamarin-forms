@@ -4,9 +4,9 @@
              x:Class="Laboratorio_Bimestre_1.App">
     <Application.Resources>
         <!-- Colors -->
-        <Color x:Key="PrimaryColor">#B91D21</Color>
-        <Color x:Key="AccentColor">#FFFFFF</Color>
-        <Color x:Key="TextColor">#000000</Color>
+        <Color x:Key="PrimaryColor">#00db88</Color>
+        <Color x:Key="AccentColor">#F2F2F2</Color>
+        <Color x:Key="TextColor">#026A6D</Color>
         <!-- Styles -->
         <Style TargetType="ContentPage">
             <Setter Property="BackgroundColor" Value="{StaticResource AccentColor}" />

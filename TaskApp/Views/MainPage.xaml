@@ -2,26 +2,38 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Laboratorio_Bimestre_1.Views.MainPage">
+    
+    <!--Cuerpo del formulario -->
     <StackLayout Padding="10">
-        <Image Source="logo.png" HorizontalOptions="Center" Margin="20" />
-        <Entry x:Name="taskName" Placeholder="Task Name" />
-        <Entry x:Name="taskDescription" Placeholder="Task Description" />
-        <DatePicker x:Name="taskDate" />
-        <Label Text="Select Task Type" />
-        <Picker x:Name="taskTypePicker">
-            <Picker.Items>
-                <x:String>Reunión</x:String>
-                <x:String>Tarea</x:String>
-                <x:String>Tiempo Libre</x:String>
-            </Picker.Items>
-        </Picker>
-        <Label Text="Select Task Priority" />
-        <Stepper x:Name="taskPriorityStepper" Minimum="1" Maximum="10" Increment="1" Value="1" />
-        <Label x:Name="taskPriorityLabel" Text="Priority: 1" HorizontalOptions="Center" />
-        <Button Text="Add Task" Clicked="OnAddTask" Margin="5" />
-        <Button Text="Navigate to StackLayout" Clicked="OnNavigateToStackLayout" Margin="5" />
-        <Button Text="Navigate to Grid" Clicked="OnNavigateToGrid" Margin="5" />
-        <Button Text="Navigate to AbsoluteLayout" Clicked="OnNavigateToAbsolute" Margin="5" />
-        <Button Text="Navigate to ListView" Clicked="OnNavigateToListView" Margin="5" />
+        <!-- Titulo -->
+        <StackLayout Orientation="Horizontal" BackgroundColor="#00db88">
+            <Label Text="App de Tareas"
+           HorizontalOptions="CenterAndExpand"
+           TextColor="White"
+               FontSize="Large"
+           ></Label>
+            <Label x:Name="taskCountLabel" Text="Total Tareas: 0" HorizontalOptions="Center" VerticalOptions="End" />
+        </StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Button Text="Reporte de Tareas" Clicked="OnNavigateToGrid" Margin="5" />
+            <Button Text="Jugar" Clicked="OnNavigateToAbsolute" Margin="5" />
+            <Button Text="Ver tareas" Clicked="OnNavigateToListView" Margin="5" />
+            <Image Source="logo-cordillera.svg" HorizontalOptions="Center" Margin="20" />
+            <Entry x:Name="taskName" Placeholder="Titulo de la Tarea" />
+            <Entry x:Name="taskDescription" Placeholder="Descripción" />
+            <DatePicker x:Name="taskDate"/>
+            <Label Text="Seleccione el tipo de Tarea" />
+            <Picker x:Name="taskTypePicker">
+                <Picker.Items>
+                    <x:String>Reunión</x:String>
+                    <x:String>Tarea</x:String>
+                    <x:String>Tiempo Libre</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label Text="Prioridad 1 a 10" />
+            <Stepper x:Name="taskPriorityStepper" Minimum="1" Maximum="10" Increment="1" Value="1" />
+            <Label x:Name="taskPriorityLabel" Text="Prioridad: 1" HorizontalOptions="Center" />
+            <Button Text="Agregar Tarea" Clicked="OnAddTask" Margin="5" />
+        </StackLayout>
     </StackLayout>
 </ContentPage>
