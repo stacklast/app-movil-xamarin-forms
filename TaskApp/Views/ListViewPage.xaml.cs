@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using TaskApp.Models;
 using Xamarin.Forms;
@@ -11,11 +12,26 @@ namespace Laboratorio_Bimestre_1.Views
     public partial class ListViewPage : ContentPage
     {
         private ObservableCollection<TaskItem> Tasks { get; set; }
+        public ObservableCollection<GroupedTaskItem> GroupedTasks { get; set; }
         public ListViewPage(ObservableCollection<TaskItem> tasks)
         {
             InitializeComponent();
-            Tasks = tasks;
-            listView.ItemsSource = Tasks;
+            GroupedTasks = new ObservableCollection<GroupedTaskItem>();
+
+            // Agrupar tareas por tipo (puedes agrupar por cualquier criterio)
+            var groupedByType = tasks
+                .GroupBy(t => t.Type)
+                .Select(g => new GroupedTaskItem(g.Key, g.Key.Substring(0, 1)));
+            foreach (var group in groupedByType)
+            {
+                foreach (var task in tasks
+                    .Where(t => t.Type == group.GroupName))
+                {
+                    group.Add(task);
+                }
+                GroupedTasks.Add(group);
+            }
+            listView.ItemsSource = GroupedTasks;
             BindingContext = new ListViewPageViewModel(tasks);
         }
         private async void OnViewTask(object sender, EventArgs e)

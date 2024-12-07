@@ -3,72 +3,77 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Laboratorio_Bimestre_1.Views.MainPage"
              Title="Inicio">
-    
-    <!--Cuerpo del formulario -->
-    <StackLayout Padding="10">
-        <!-- logo -->
-        <StackLayout Padding="10" VerticalOptions="FillAndExpand" BackgroundColor="#026A6D">
-            <Image Source="logo.png" HorizontalOptions="Center" Margin="20" />
-            <Label Text="App de Tareas"
-                HorizontalOptions="CenterAndExpand"
-                TextColor="White"
-                FontSize="42" TextTransform="Uppercase"
-                FontAttributes="Bold"
-            />
-        </StackLayout>
-        <!-- Titulo -->
-        <StackLayout Orientation="Horizontal" BackgroundColor="#026A6D">
-            <Label x:Name="taskCountLabel" 
-                   Text="Total Tareas: 0"
-                   TextColor="White"
-                   HorizontalOptions="CenterAndExpand"/>
-        </StackLayout>
-        
-        <StackLayout VerticalOptions="CenterAndExpand">
-            <Button Text="Reporte de Tareas" 
-                    Clicked="OnNavigateToGrid" 
-                    Margin="3" />
-            <Button Text="Jugar" 
-                    Clicked="OnNavigateToAbsolute" 
-                    Margin="3" />
-            <Button Text="Ver tareas" 
-                    Clicked="OnNavigateToListView" 
-                    Margin="3" />
-            <!-- form -->
-            <Frame BorderColor="Gray" CornerRadius="10" Padding="10" HasShadow="True">
-                <StackLayout >
-                    <Entry x:Name="taskName" 
-                        Placeholder="Titulo de la Tarea" />
-                    <Entry x:Name="taskDescription" 
-                        Placeholder="Descripción" />
-                    <DatePicker x:Name="taskDate"/>
-                    <Label Text="Seleccione el tipo de Tarea" />
-                    <Picker x:Name="taskTypePicker">
-                        <Picker.Items>
-                            <x:String>Reunión</x:String>
-                            <x:String>Tarea</x:String>
-                            <x:String>Tiempo Libre</x:String>
-                        </Picker.Items>
-                    </Picker>
-                    <Label Text="Desde 1 a 10" />
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                        <Stepper x:Name="taskPriorityStepper" 
-                            Minimum="1" 
-                            Maximum="10" 
-                            Increment="1" 
-                            Value="1"
-                            ValueChanged="OnPriorityChanged"/>
-                        <Label x:Name="taskPriorityLabel" 
-                           Text="Prioridad: 1" 
-                           VerticalOptions="Center" 
-                           Margin="10,0" />
+    <ScrollView>
+        <!--Cuerpo del formulario -->
+        <StackLayout Padding="10">
+            <!-- logo -->
+            <StackLayout Padding="10" VerticalOptions="FillAndExpand" BackgroundColor="#026A6D">
+                <Image Source="logo.png" HorizontalOptions="Center" Margin="20" />
+                <Label Text="App de Tareas"
+            HorizontalOptions="CenterAndExpand"
+            TextColor="White"
+            FontSize="42" TextTransform="Uppercase"
+            FontAttributes="Bold"
+        />
+            </StackLayout>
+            <!-- Titulo -->
+            <StackLayout Orientation="Horizontal" BackgroundColor="#026A6D">
+                <Label x:Name="taskCountLabel" 
+               Text="Total Tareas: 0"
+               TextColor="White"
+               HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <StackLayout Padding="20" VerticalOptions="Center">
+                <Label Text="Cambiar el color de fondo" FontSize="Large" HorizontalOptions="Center" />
+                <Switch x:Name="colorSwitch" Toggled="OnColorSwitchToggled" HorizontalOptions="Center" />
+            </StackLayout>
+
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Button Text="Reporte de Tareas" 
+                Clicked="OnNavigateToGrid" 
+                Margin="3" />
+                <Button Text="Jugar" 
+                Clicked="OnNavigateToAbsolute" 
+                Margin="3" />
+                <Button Text="Ver tareas" 
+                Clicked="OnNavigateToListView" 
+                Margin="3" />
+                <!-- form -->
+                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" HasShadow="True">
+                    <StackLayout >
+                        <Entry x:Name="taskName" 
+                    Placeholder="Titulo de la Tarea" />
+                        <Entry x:Name="taskDescription" 
+                    Placeholder="Descripción" />
+                        <DatePicker x:Name="taskDate"/>
+                        <Label Text="Seleccione el tipo de Tarea" />
+                        <Picker x:Name="taskTypePicker">
+                            <Picker.Items>
+                                <x:String>Reunión</x:String>
+                                <x:String>Tarea</x:String>
+                                <x:String>Tiempo Libre</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <Label Text="Desde 1 a 10" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Stepper x:Name="taskPriorityStepper" 
+                        Minimum="1" 
+                        Maximum="10" 
+                        Increment="1" 
+                        Value="1"
+                        ValueChanged="OnPriorityChanged"/>
+                            <Label x:Name="taskPriorityLabel" 
+                       Text="Prioridad: 1" 
+                       VerticalOptions="Center" 
+                       Margin="10,0" />
+                        </StackLayout>
+                        <Button Text="Agregar Tarea" 
+                    Clicked="OnAddTask" 
+                    Margin="5" />
                     </StackLayout>
-                    <Button Text="Agregar Tarea" 
-                        Clicked="OnAddTask" 
-                        Margin="5" />
-                </StackLayout>
-            </Frame>
-            
+                </Frame>
+
+            </StackLayout>
         </StackLayout>
-    </StackLayout>
+    </ScrollView>
 </ContentPage>

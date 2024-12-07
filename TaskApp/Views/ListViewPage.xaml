@@ -7,7 +7,24 @@
         <StackLayout Padding="10" VerticalOptions="FillAndExpand">
             <ListView x:Name="listView" 
                       VerticalOptions="FillAndExpand"
-                      IsVisible="{Binding HasTasks}">
+                      IsVisible="{Binding HasTasks}" 
+                      IsGroupingEnabled="True" 
+                      GroupDisplayBinding="{Binding GroupName}" 
+                      GroupShortNameBinding="{Binding ShortName}">
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="1" BackgroundColor="#026A6D">
+                                <Label Text="{Binding GroupName}" 
+                                       TextColor="White"  
+                                       FontAttributes="Bold" 
+                                       FontSize="Medium"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center" VerticalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -20,12 +37,12 @@
                                 <StackLayout Grid.Column="0" Orientation="Horizontal">
                                     <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Medium" />
                                 </StackLayout>
-                                <StackLayout Grid.Column="1" Orientation="Vertical">
-                                    <Label Text="{Binding Date}"  FontSize="Medium" />
+                                <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="FillAndExpand">
+                                    <Label Text="{Binding Date}"  FontSize="Small" />
                                 </StackLayout>
                                 <StackLayout Grid.Column="2" Orientation="Horizontal" HorizontalOptions="End">
-                                    <Button Text="Ver" Clicked="OnViewTask" CommandParameter="{Binding .}" Margin="5,0" />
-                                    <Button Text="Eliminar" Clicked="OnDeleteTask" CommandParameter="{Binding .}" Margin="5,0" />
+                                    <Button Text="Ver" Clicked="OnViewTask" CommandParameter="{Binding .}" Margin="4,0" Padding="1" />
+                                    <Button Text="Eliminar" Clicked="OnDeleteTask" CommandParameter="{Binding .}" Margin="4,0" Padding="1" />
                                 </StackLayout>
                             </Grid>
                         </ViewCell>

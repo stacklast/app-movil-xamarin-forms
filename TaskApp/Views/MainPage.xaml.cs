@@ -87,5 +87,16 @@ namespace Laboratorio_Bimestre_1.Views
                 await NavigationService.NavigateWithAnimation(currentPage, new ListViewPage(Tasks));
             }
         }
+        private void OnColorSwitchToggled(object sender, ToggledEventArgs e)
+        {
+            if (e.Value) // Si el Switch está encendido
+            {
+                this.BackgroundColor = Color.LightGreen;
+            }
+            else // Si el Switch está apagado
+            {
+                this.BackgroundColor = Color.White;
+            }
+        }
     }
 }
