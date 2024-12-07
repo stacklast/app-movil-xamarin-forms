@@ -16,13 +16,15 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
+
                 <ListView x:Name="taskListView">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextCell Text="{Binding Name}" Detail="{Binding Description}" />
+                            <TextCell Text="{Binding Name}"  Detail="{Binding ConcatenatedDetail}" />
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+                
             </Grid>
         </StackLayout>
     </ContentPage.Content>

@@ -10,6 +10,14 @@ namespace TaskApp.Models
         private DateTime date;
         private string type;
         private int priority;
+
+        public string ConcatenatedDetail
+        {
+            get
+            {
+                return $"{Description} - {Date:MM/dd/yyyy} - {Type} - Priority: {Priority}";
+            }
+        }
         public string Name
         {
             get => name;
