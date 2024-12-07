@@ -5,19 +5,25 @@
              Title="Lista de Tareas">
     <ContentPage.Content>
         <StackLayout Padding="10" VerticalOptions="FillAndExpand">
-            <ListView x:Name="listView" VerticalOptions="FillAndExpand">
+            <ListView x:Name="listView" 
+                      VerticalOptions="FillAndExpand"
+                      IsVisible="{Binding HasTasks}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid Padding="5">
+                            <Grid Padding="1" RowSpacing="2">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
-                                <StackLayout Grid.Column="0" Orientation="Vertical">
+                                <StackLayout Grid.Column="0" Orientation="Horizontal">
                                     <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Medium" />
                                 </StackLayout>
-                                <StackLayout Grid.Column="1" Orientation="Horizontal" HorizontalOptions="End">
+                                <StackLayout Grid.Column="1" Orientation="Vertical">
+                                    <Label Text="{Binding Date}"  FontSize="Medium" />
+                                </StackLayout>
+                                <StackLayout Grid.Column="2" Orientation="Horizontal" HorizontalOptions="End">
                                     <Button Text="Ver" Clicked="OnViewTask" CommandParameter="{Binding .}" Margin="5,0" />
                                     <Button Text="Eliminar" Clicked="OnDeleteTask" CommandParameter="{Binding .}" Margin="5,0" />
                                 </StackLayout>
@@ -26,11 +32,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button 
-                Text="Regresar" 
-                Clicked="OnBackToMainPage" 
-                HorizontalOptions="Center" 
-                VerticalOptions="EndAndExpand" />
+            <Label Text="No hay tareas disponibles" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding HasNoTasks}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

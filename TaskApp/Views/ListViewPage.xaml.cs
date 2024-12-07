@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using TaskApp.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,6 +16,7 @@ namespace Laboratorio_Bimestre_1.Views
             InitializeComponent();
             Tasks = tasks;
             listView.ItemsSource = Tasks;
+            BindingContext = new ListViewPageViewModel(tasks);
         }
         private async void OnViewTask(object sender, EventArgs e)
         {
@@ -32,9 +35,37 @@ namespace Laboratorio_Bimestre_1.Views
                 Tasks.Remove(task);
             }
         }
-        private async void OnBackToMainPage(object sender, EventArgs e)
+
+    }
+    public class ListViewPageViewModel : INotifyPropertyChanged
+    {
+        private ObservableCollection<TaskItem> _tasks;
+        public ObservableCollection<TaskItem> Tasks
         {
-            await Navigation.PopAsync();
+            get { return _tasks; }
+            set
+            {
+                _tasks = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(HasTasks));
+                OnPropertyChanged(nameof(HasNoTasks));
+            }
+        }
+        public bool HasTasks => Tasks.Count > 0;
+        public bool HasNoTasks => Tasks.Count == 0;
+        public ListViewPageViewModel(ObservableCollection<TaskItem> tasks)
+        {
+            Tasks = tasks;
+            Tasks.CollectionChanged += (sender, e) =>
+            {
+                OnPropertyChanged(nameof(HasTasks));
+                OnPropertyChanged(nameof(HasNoTasks));
+            };
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
