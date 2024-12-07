@@ -16,9 +16,16 @@
                 </Picker.Items>
             </Picker>
             <Label Text="Prioridad entre 1 a 10" />
-            <Stepper x:Name="taskPriorityStepper" Minimum="1" Maximum="10" Increment="1" Value="1" />
-            <Label x:Name="taskPriorityLabel" Text="Prioridad: 1" HorizontalOptions="Center" />
-            <Button Text="Guardar Cambios" Clicked="OnSaveTask" />
+            <Stepper x:Name="taskPriorityStepper" 
+                     Minimum="1" 
+                     Maximum="10" 
+                     Increment="1" 
+                     Value="1" />
+            <Label x:Name="taskPriorityLabel" 
+                   Text="Prioridad: 1" 
+                   HorizontalOptions="Center" />
+            <Button Text="Guardar Cambios" 
+                    Clicked="OnSaveTask" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -29,19 +29,23 @@ namespace Laboratorio_Bimestre_1.Views
             // Validations
             if (string.IsNullOrWhiteSpace(taskName.Text))
             {
-                await DisplayAlert("Validación", "El título de la tarea es requerido.", "OK"); return;
+                await DisplayAlert("Validación", "El título de la tarea es requerido.", "OK");
+                return;
             }
             if (string.IsNullOrWhiteSpace(taskDescription.Text))
             {
-                await DisplayAlert("Validación", "La descripción es requerida.", "OK"); return;
+                await DisplayAlert("Validación", "La descripción es requerida.", "OK");
+                return;
             }
             if (taskDate.Date < DateTime.Today)
             {
-                await DisplayAlert("Validación", "La fecha no puede ser menor a hoy.", "OK"); return;
+                await DisplayAlert("Validación", "La fecha no puede ser menor a hoy.", "OK");
+                return;
             }
             if (taskTypePicker.SelectedIndex == -1)
             {
-                await DisplayAlert("Validación", "El tipo de tarea es requerido", "OK"); return;
+                await DisplayAlert("Validación", "El tipo de tarea es requerido", "OK");
+                return;
             }
             var task = new TaskItem
             {

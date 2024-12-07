@@ -23,7 +23,10 @@ namespace Laboratorio_Bimestre_1.Views
         private async void OnDeleteTask(object sender, EventArgs e)
         {
             var task = (TaskItem)((Button)sender).CommandParameter;
-            var confirm = await DisplayAlert("Confirmar Eliminado", $"Estas seguro de eliminar {task.Name}?", "Si", "No");
+            var confirm = await DisplayAlert("Confirmar Eliminado",
+                $"Estas seguro de eliminar {task.Name}?",
+                "Si", "No");
+
             if (confirm)
             {
                 Tasks.Remove(task);

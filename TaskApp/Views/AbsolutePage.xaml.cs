@@ -22,6 +22,7 @@ namespace Laboratorio_Bimestre_1.Views
             // Incrementa el puntaje
             score++;
             scoreLabel.Text = $"Puntos: {score}";
+
             // Mueve el círculo a una nueva posición aleatoria
             double newX = random.NextDouble();
             double newY = random.NextDouble();

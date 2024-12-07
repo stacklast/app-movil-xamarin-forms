@@ -30,16 +30,19 @@ namespace Laboratorio_Bimestre_1.Views
         private void ApplyFilter()
         {
             DateTime selectedDate = filterDatePicker.Date;
+
             // Filtra las tareas sin eliminar de la colección original
             var filtered = _allTasks
                 .Where(t => t.Date.Date == selectedDate.Date)
                 .ToList();
+
             // Actualiza la colección de tareas filtradas
             FilteredTasks.Clear();
             foreach (var task in filtered)
             {
                 FilteredTasks.Add(task);
             }
+
             // Verifica si no hay tareas para la fecha seleccionada y agrega un mensaje
             if (!FilteredTasks.Any())
             {

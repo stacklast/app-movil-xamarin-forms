@@ -25,7 +25,11 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Text="Regresar" Clicked="OnBackToMainPage" HorizontalOptions="Center" VerticalOptions="EndAndExpand" />
+            <Button 
+                Text="Regresar" 
+                Clicked="OnBackToMainPage" 
+                HorizontalOptions="Center" 
+                VerticalOptions="EndAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

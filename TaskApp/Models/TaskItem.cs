@@ -16,7 +16,10 @@ namespace TaskApp.Models
             set
             {
                 if (name != value)
-                { name = value; OnPropertyChanged(nameof(Name)); }
+                {
+                    name = value;
+                    OnPropertyChanged(nameof(Name));
+                }
             }
         }
         public string Description
@@ -24,7 +27,10 @@ namespace TaskApp.Models
             get => description; set
             {
                 if (description != value)
-                { description = value; OnPropertyChanged(nameof(Description)); }
+                {
+                    description = value;
+                    OnPropertyChanged(nameof(Description));
+                }
             }
         }
         public DateTime Date
@@ -33,7 +39,10 @@ namespace TaskApp.Models
             set
             {
                 if (date != value)
-                { date = value; OnPropertyChanged(nameof(Date)); }
+                {
+                    date = value;
+                    OnPropertyChanged(nameof(Date));
+                }
             }
         }
         public string Type
@@ -42,7 +51,10 @@ namespace TaskApp.Models
             set
             {
                 if (type != value)
-                { type = value; OnPropertyChanged(nameof(Type)); }
+                {
+                    type = value;
+                    OnPropertyChanged(nameof(Type));
+                }
             }
         }
         public int Priority
@@ -51,7 +63,10 @@ namespace TaskApp.Models
             set
             {
                 if (priority != value)
-                { priority = value; OnPropertyChanged(nameof(Priority)); }
+                {
+                    priority = value;
+                    OnPropertyChanged(nameof(Priority));
+                }
             }
         }
         public event PropertyChangedEventHandler PropertyChanged;
