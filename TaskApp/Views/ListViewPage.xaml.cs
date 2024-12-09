@@ -15,16 +15,17 @@ namespace Laboratorio_Bimestre_1.Views
         public ObservableCollection<GroupedTaskItem> GroupedTasks { get; set; }
         public ListViewPage(ObservableCollection<TaskItem> tasks)
         {
+            Tasks = tasks;
             InitializeComponent();
             GroupedTasks = new ObservableCollection<GroupedTaskItem>();
 
             // Agrupar tareas por tipo (puedes agrupar por cualquier criterio)
-            var groupedByType = tasks
+            var groupedByType = Tasks
                 .GroupBy(t => t.Type)
                 .Select(g => new GroupedTaskItem(g.Key, g.Key.Substring(0, 1)));
             foreach (var group in groupedByType)
             {
-                foreach (var task in tasks
+                foreach (var task in Tasks
                     .Where(t => t.Type == group.GroupName))
                 {
                     group.Add(task);
@@ -32,7 +33,7 @@ namespace Laboratorio_Bimestre_1.Views
                 GroupedTasks.Add(group);
             }
             listView.ItemsSource = GroupedTasks;
-            BindingContext = new ListViewPageViewModel(tasks);
+            BindingContext = new ListViewPageViewModel(Tasks);
         }
         private async void OnViewTask(object sender, EventArgs e)
         {
@@ -48,7 +49,10 @@ namespace Laboratorio_Bimestre_1.Views
 
             if (confirm)
             {
-                Tasks.Remove(task);
+                if (Tasks != null)
+                {
+                    Tasks.Remove(task);
+                }
             }
         }
 
