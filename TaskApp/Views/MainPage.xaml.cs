@@ -20,7 +20,7 @@ namespace Laboratorio_Bimestre_1.Views
         }
         private void UpdateTaskCount()
         {
-            taskCountLabel.Text = $"Total Tasks: {Tasks.Count}";
+            taskCountLabel.Text = $"Total Tareas: {Tasks.Count}";
         }
         private void OnPriorityChanged(object sender, ValueChangedEventArgs e)
         {

@@ -48,8 +48,8 @@ namespace Laboratorio_Bimestre_1.Views
             {
                 FilteredTasks.Add(new TaskItem
                 {
-                    Name = "No tasks",
-                    Description = "No tasks found for the selected date",
+                    Name = "No hay tareas",
+                    Description = "No se han encotrado tareas para la fecha seleccionada.",
                     Date = selectedDate,
                     Type = string.Empty,
                     Priority = 0

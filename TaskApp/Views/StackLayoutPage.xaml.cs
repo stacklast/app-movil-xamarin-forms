@@ -26,12 +26,12 @@ namespace Laboratorio_Bimestre_1.Views
             taskDate.Date = task.Date;
             taskTypePicker.SelectedItem = task.Type;
             taskPriorityStepper.Value = task.Priority;
-            taskPriorityLabel.Text = $"Priority: {task.Priority}";
+            taskPriorityLabel.Text = $"Prioridad: {task.Priority}";
             taskPriorityStepper.ValueChanged += OnPriorityChanged;
         }
         private void OnPriorityChanged(object sender, ValueChangedEventArgs e)
         {
-            taskPriorityLabel.Text = $"Priority: {e.NewValue}";
+            taskPriorityLabel.Text = $"Prioridad: {e.NewValue}";
         }
         private async void OnSaveTask(object sender, EventArgs e)
         { // Validations
